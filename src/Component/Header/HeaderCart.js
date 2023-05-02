@@ -3,10 +3,9 @@ import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import CartIcon from "../UI/CartIcon";
 import classes from "./HeaderCart.module.css";
 
-export default function HeaderCart() {
+export default function HeaderCart(props) {
   return (
     <>
       <Navbar bg="dark" variant="dark">
@@ -18,7 +17,7 @@ export default function HeaderCart() {
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
         </Container>
-        <Button variant="danger">
+        <Button onClick={props.onShow} variant="danger">
           <span className={classes.icon}></span>
           <span>Your Cart</span>
           <span className={classes.badge}>0</span>

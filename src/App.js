@@ -1,13 +1,23 @@
-import { Fragment } from 'react';
+import { Fragment,useState } from 'react';
 
-import CartItem from './Component/Cart/CartItem';
 import HeaderCart from './Component/Header/HeaderCart';
+import ProductItem from './Component/Product/ProductItem';
+import Cart from './Component/Cart/Cart';
 
 function App() {
+  const[cartIsVisible, setCartIsVisible]=useState(false);
+
+  const showCartHandler=()=>{
+    setCartIsVisible(true);
+  }
+  const hideCartHandler=()=>{
+    setCartIsVisible(false);
+  }
   return (
     <Fragment >
-      <HeaderCart/>
-    <CartItem/>
+      {cartIsVisible && <Cart onHide={hideCartHandler}/>}
+      <HeaderCart onShow={showCartHandler}/>
+    <ProductItem/>
     </Fragment>
   );
 }

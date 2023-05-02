@@ -33,7 +33,7 @@ const productsArr = [
   },
 ];
 
-export default function CartItem() {
+export default function ProductItem() {
   return (
     <Fragment>
       <Container>
