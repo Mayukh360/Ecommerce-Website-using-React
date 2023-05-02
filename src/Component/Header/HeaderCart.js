@@ -1,26 +1,32 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import classes from "./HeaderCart.module.css";
+import CartContext from "../Store/CartContext";
 
 export default function HeaderCart(props) {
+  const cartCtx = useContext(CartContext);
+
+  const numberOfCartItems = cartCtx.items.reduce(
+    (currNumber, item) => currNumber + item.amount,
+    0
+  );
   return (
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">Home</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#home">Store</Nav.Link>
+            <Nav.Link href="#features">About</Nav.Link>
           </Nav>
         </Container>
         <Button onClick={props.onShow} variant="danger">
           <span className={classes.icon}></span>
           <span>Your Cart</span>
-          <span className={classes.badge}>0</span>
+          <span className={classes.badge}>{numberOfCartItems}</span>
         </Button>{" "}
       </Navbar>
     </>
