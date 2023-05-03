@@ -3,6 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqkD1n7pBUNJzunVpJd63Drrp_KE4hclGt3A&usqp=CAU" ></img>
       <p>
         Welcome to our e-commerce website, where shopping is made easy and
         convenient for you. Our website is designed to provide you with a

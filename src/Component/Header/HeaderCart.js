@@ -20,9 +20,9 @@ export default function HeaderCart(props) {
     
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/productitem">Home</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Store</Nav.Link>
+            <Nav.Link as={Link} to="/history">History</Nav.Link>
             <Nav.Link  as={Link} to="/about">About</Nav.Link>
           </Nav>
         </Container>
