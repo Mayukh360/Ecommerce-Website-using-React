@@ -1,13 +1,16 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import Modal from '../Portal/Modal'
 import classes from './Cart.module.css'
 import CartContext from '../Store/CartContext'
 import CartItem from './CartItem'
+import { Alert } from 'react-bootstrap';
 
 
 export default function Cart(props) {
   const cartCtx = useContext(CartContext);
+  const [showAlert, setShowAlert] = useState(false);
   const totalAmount = cartCtx.totalAmount;
+  const hasItem = cartCtx.items.length > 0;
 
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({
@@ -39,7 +42,11 @@ export default function Cart(props) {
   </ul>
   );
 
-
+  const orderPlaceHandler=()=>{
+    cartCtx.clearCart();
+    setShowAlert(true);
+   
+  }
 
   return (
     <Modal onHide={props.onHide}>
@@ -53,8 +60,16 @@ export default function Cart(props) {
         Close
       </button>
       
-       <button  className={classes.button}>Order </button>
+      {hasItem && <button onClick={orderPlaceHandler} className={classes.button}>Order </button>}
     </div>
+    <Alert
+        variant="success"
+        show={showAlert}
+        onClose={() => setShowAlert(false)}
+        dismissible
+      >
+        Thanks for shopping with us! Please visit us again.
+      </Alert>
     </Modal>
   )
 }
