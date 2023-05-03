@@ -6,8 +6,9 @@ import Cart from './Component/Cart/Cart';
 import CartProvider from './Component/Store/CartProvider';
 import Heading from './Component/Header/Heading';
 import { Routes, Route } from 'react-router-dom';
-import RenderPage from './Render/RenderPage';
+// import RenderPage from './Render/RenderPage';
 import About from './Pages/About';
+
 
 
 function App() {

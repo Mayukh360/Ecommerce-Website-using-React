@@ -4,8 +4,8 @@ import Home from '../Pages/Home'
 import About from '../Pages/About'
 
 const router= createBrowserRouter([
-    { path:'/about', element:<Outlet/>},
-    {}
+    { path:'/about', element:<About/>},
+  
 ])
 export default function RenderPage(props) {
    
