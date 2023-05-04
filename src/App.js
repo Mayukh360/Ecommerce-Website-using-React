@@ -8,7 +8,9 @@ import Heading from "./Component/Header/Heading";
 import { Routes, Route } from "react-router-dom";
 // import RenderPage from './Render/RenderPage';
 import About from "./Pages/About";
-import History from "./Pages/History";
+
+import Home from "./Pages/Home";
+import Contact from "./Pages/Contact";
 
 function App() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
@@ -25,8 +27,9 @@ function App() {
       <Heading />
       <Routes>
         <Route path="/about" element={<About />} />
-        <Route path="/history" element={<History />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/productitem" element={<ProductItem />} />
+        <Route path="/" element={<Home />} />
       </Routes>
       
       

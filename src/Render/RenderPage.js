@@ -1,14 +1,16 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider, Outlet }from 'react-router-dom'
-// import Home from '../Pages/Home'
 import About from '../Pages/About'
-import History from '../Pages/History'
+
 import ProductItem from '../Component/Product/ProductItem'
+import Home from '../Pages/Home'
+import Contact from '../Pages/Contact'
 
 const router= createBrowserRouter([
     { path:'/about', element:<About/>},
-    { path:'/history', element:<History/>},
+    { path:'/contact', element:<Contact/>},
     { path:'/productitem', element:<ProductItem/>},
+    { path:'/', element:<Home/>},
   
 ])
 export default function RenderPage(props) {

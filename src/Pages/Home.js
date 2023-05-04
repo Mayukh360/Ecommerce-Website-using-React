@@ -1,31 +1,46 @@
 import React from "react";
+import Carousel from 'react-bootstrap/Carousel';
 
 export default function Home() {
   return (
-    <div>
-      <h2>This is Home Page </h2>
-      <p>
-        Lorem ipsum carrots enhanced rebates. Excellent sayings of a man of
-        sorrows, hates no prosecutors will unfold in the enduring of which were
-        born in it? Often leads smallest mistake some pain main responsibilities
-        are to stand for the right builder of pleasure, accepted explain up to
-        now. , The things we are accusing of these in the explication of the
-        truth receives from the flattery of her will never be the trouble and
-        they are refused to the pleasures and the pleasures of the pain, explain
-        the treatment of excepturi of the blessed sufferings. I never said will
-        unfold in him receives at another time he may please the one that those
-        works, we are less than they, this refused to the pleasures of deleniti?
-        Those are! Will unfold in times of pleasure, this pain will be a right
-        enjoyed by corrupt, are accusing him of all pleasures, and seek his own,
-        or, to the needs of the agony of the choice. We hate the fellow. Lorem
-        ipsum dolor, sit amet consectetur rebates. The distinction, that arise
-        from or to. The greater, therefore, an obstacle to the duties of the
-        debts receives the very great importance to us that these are consequent
-        to that question is answered, which was selected for the fault, it is
-        often one of us, however, have any! Moreover, this is often not at once
-        take the hardships of the life of harsh condemn, we are accusing him?
-        Him whom something large cisterns.
-      </p>
-    </div>
+    <Carousel fade >
+    <Carousel.Item>
+      <img style={{ height: '700px' }}
+        className="d-block w-100 "
+        src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        alt="First slide"
+      />
+      <Carousel.Caption>
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+      <img style={{ height: '700px' }}
+        className="d-block w-100"
+        src="https://images.unsplash.com/photo-1514417034809-c7b296354f07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+        alt="Second slide"
+      />
+
+      <Carousel.Caption>
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+      <img style={{ height: '700px' }}
+        className="d-block w-100"
+        src="https://images.unsplash.com/photo-1620618802705-79f663a9012a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+        alt="Third slide"
+      />
+
+      <Carousel.Caption>
+        <h3>Third slide label</h3>
+        <p>
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+        </p>
+      </Carousel.Caption>
+    </Carousel.Item>
+  </Carousel>
   );
 }

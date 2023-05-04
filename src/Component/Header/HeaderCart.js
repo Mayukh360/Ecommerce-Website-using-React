@@ -6,8 +6,6 @@ import Navbar from "react-bootstrap/Navbar";
 import classes from "./HeaderCart.module.css";
 import CartContext from "../Store/CartContext";
 import { Link } from 'react-router-dom';
-import RenderPage from "../../Render/RenderPage";
-import About from "../../Pages/About";
 
 export default function HeaderCart(props) {
   const cartCtx = useContext(CartContext);
@@ -20,10 +18,11 @@ export default function HeaderCart(props) {
     
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/productitem">Home</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/history">History</Nav.Link>
-            <Nav.Link  as={Link} to="/about">About</Nav.Link>
+          <Nav.Link as={Link} to="/productitem">Products</Nav.Link>
+           <Nav.Link  as={Link} to="/about">About</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
           </Nav>
         </Container>
         <Button onClick={props.onShow} variant="danger">
