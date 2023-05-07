@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useState, useRef, useContext, } from "react";
 import { useNavigate } from 'react-router-dom';
 
@@ -49,11 +49,8 @@ export default function AuthForm() {
       } else {
         //The responde holds error
         return response.json().then((data) => {
-          let errorMessage = "Authentication Failed";
-          // if (data && data.error && data.error.message) {
-          //   errorMessage = data.error.message;
-          // }
-          
+          let errorMessage = "Authentication Failed,please Check input field";
+         
           throw new Error(errorMessage)
         });
       }
@@ -71,8 +68,8 @@ export default function AuthForm() {
   };
 
 
-  return (
-    <section className={classes.auth}>
+  return (<Fragment>
+    {!AuthCtx.isLoggedIn && <section className={classes.auth}>
     <h1>{isLogin ? "Login" : "Sign Up"}</h1>
     <form onSubmit={submitHandler}>
       <div className={classes.control}>
@@ -103,6 +100,8 @@ export default function AuthForm() {
         </button>
       </div>
     </form>
-  </section>
+  </section> }
+  {AuthCtx.isLoggedIn && <h2 className={classes.loggedInmessage}>You Are already logged in, Visit Product section to see our Products</h2>}
+  </Fragment>
   )
 }

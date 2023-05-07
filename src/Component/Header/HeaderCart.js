@@ -6,14 +6,19 @@ import Navbar from "react-bootstrap/Navbar";
 import classes from "./HeaderCart.module.css";
 import CartContext from "../Store/CartContext";
 import { Link } from 'react-router-dom';
+import AuthContext from "../../store/AuthContext";
 
 export default function HeaderCart(props) {
+  const authCtx=useContext(AuthContext);
   const cartCtx = useContext(CartContext);
 
   const numberOfCartItems = cartCtx.items.reduce(
     (currNumber, item) => currNumber + item.amount,
     0
   );
+  const logoutHandler=()=>{
+ authCtx.logout();
+  }
   return (
     
       <Navbar bg="dark" variant="dark">
@@ -25,12 +30,16 @@ export default function HeaderCart(props) {
            <Nav.Link as={Link} to="/login">Login</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
           </Nav>
+         {authCtx.isLoggedIn && <Button onClick={logoutHandler} variant="danger">Logout</Button>}
         </Container>
-        <Button onClick={props.onShow} variant="danger">
+        
+      
+       
+       {authCtx.isLoggedIn && <Button onClick={props.onShow} variant="danger">
           <span className={classes.icon}></span>
           <span>Your Cart</span>
           <span className={classes.badge}>{numberOfCartItems}</span>
-        </Button>{" "}
+        </Button>}
       </Navbar>
     
   );
