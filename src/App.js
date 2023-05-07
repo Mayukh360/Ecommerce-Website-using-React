@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 
 import HeaderCart from "./Component/Header/HeaderCart";
 import ProductItem from "./Component/Product/ProductItem";
@@ -11,9 +11,15 @@ import About from "./Pages/About";
 
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
+import AuthForm from "./Pages/AuthForm";
+import AuthContext from "./store/AuthContext";
 
 function App() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
+  const authCtx=useContext(AuthContext);
+  const temp=()=>{
+    console.log(authCtx.isLoggedIn);
+  }
   const showCartHandler = () => {
     setCartIsVisible(true);
   };
@@ -29,10 +35,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/productitem" element={<ProductItem />} />
+        <Route path="/login" element={<AuthForm />} />
         <Route path="/" element={<Home />} />
       </Routes>
       
-      
+      <button onClick={temp}>temp</button>
     </CartProvider>
   );
 }

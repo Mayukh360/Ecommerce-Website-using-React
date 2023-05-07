@@ -53,7 +53,7 @@ export default function Cart(props) {
       {cartItems}
           <div className={classes.total} >
       <span>Total</span>
-      <span>{totalAmount}</span>
+      <span>{totalAmount}₹</span>
     </div>
     <div className={classes.actions}>
       <button onClick={props.onHide} className={classes["button--alt"]} >

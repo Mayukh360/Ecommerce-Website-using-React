@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import Card from "../Component/UI/Card";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -27,11 +28,17 @@ export default function Contact() {
         },
       }
     );
+    setName('');
+    setEmail('');
+    setPhone('');
   
   };
 
   return (
-    <Form onSubmit={formSubmitHandler} style={{ width: "50%", textAlign: "center" }}>
+  <Card>
+  
+    <Form onSubmit={formSubmitHandler} >
+    <h3> Fill This Form, we will get back to you soon</h3>
       <Form.Group className="mb-3">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -52,5 +59,7 @@ export default function Contact() {
         Submit
       </Button>
     </Form>
+
+    </Card>
   );
 }
