@@ -1,7 +1,42 @@
-import React from "react";
+import axios from "axios";
+import React,{useEffect,useContext} from "react";
 import Carousel from 'react-bootstrap/Carousel';
+import CartContext from "../Component/Store/CartContext";
 
 export default function Home() {
+  const cartCtx=useContext(CartContext);
+  useEffect(()=>{
+   
+    const enteredEmail=localStorage.getItem('email');
+    const changedEmail=enteredEmail.replace("@","").replace(".","");
+    async function fetchData() {
+    
+    const response = await axios.get( `https://crudcrud.com/api/518cf2a72a7543b4a28274a9bc10dc81/${changedEmail}`)
+    // console.log(response.data);
+    const productList = response.data.map((item) => {
+            return {
+              id: item._id,
+              name: item.title,
+              price: Number(item.price),
+              image: item.imageUrl,
+              amount: item.amount,
+            };
+          });
+          
+    productList.forEach((item) => {
+      cartCtx.addItem({
+        id: item.name, 
+        name: item.name,
+        price: item.price,
+        image: item.image,
+        amount: Number(item.amount),
+      });
+    });
+    console.log('I am executed');
+    }
+    fetchData();
+  },[])
+
   return (
     <Carousel fade >
     <Carousel.Item>

@@ -57,9 +57,10 @@ export default  function ProductItem() {
   const CartCtx = useContext(CartContext);
   const enteredEmail=localStorage.getItem('email');
     const changedemail=enteredEmail.replace("@","").replace(".","");
-  async function btnClickHandler (item)  {
+  
+    async function btnClickHandler (item)  {
     
-    console.log(changedemail);
+    
     CartCtx.addItem({
       id: item.title, // pass the item's id instead of generating a new one
       name: item.title,
@@ -67,8 +68,10 @@ export default  function ProductItem() {
       image: item.imageUrl,
       amount: Number(item.amount),
     });
-  const response=await axios.post(`https://crudcrud.com/api/4488c3bc6ca441c4a2e4e6f06482e13f/${changedemail}`,item);
-    console.log(response.data);
+  const response=await axios.post(`https://crudcrud.com/api/518cf2a72a7543b4a28274a9bc10dc81/${changedemail}`,item);
+  //   console.log(response.data);
+  // console.log("item",item);
+  // console.log(response.data);
   };
   return (
     <Fragment>

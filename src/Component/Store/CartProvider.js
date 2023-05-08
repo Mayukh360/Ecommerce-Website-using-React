@@ -9,6 +9,7 @@ export default function CartProvider(props) {
 
   //The callback function returns true if condition satisfies, then findIndex returns the first index that satisfies the condtion
   const addItemToCartHandler = (item) => {
+    console.log(item);
     const existingCartItemIndex = cartContext.items.findIndex(
       (cartItem) => cartItem.id === item.id
     );

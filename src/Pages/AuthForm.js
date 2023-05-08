@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
 import { useState, useRef, useContext, } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 import classes from "./AuthForm.module.css";
 import AuthContext from '../store/AuthContext';
+import CartContext from '../Component/Store/CartContext';
 
 export default function AuthForm() {
     const AuthCtx=useContext(AuthContext);
-  const history= useNavigate()
+    const cartCtx=useContext(CartContext);
+    const history= useNavigate()
 
   const [isLoading, setIsLoading] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
@@ -21,8 +23,10 @@ export default function AuthForm() {
     event.preventDefault();
     const enteredEmail = emailInputRef.current.value;
     localStorage.setItem('email',enteredEmail);
+    const changedEmail=enteredEmail.replace("@","").replace(".","");
+    
     const enteredPassword = passwordInputRef.current.value;
-    console.log(enteredEmail, enteredPassword);
+    // console.log(changedEmail);
      
     setIsLoading(true);
     let url;
@@ -62,7 +66,56 @@ export default function AuthForm() {
       AuthCtx.autoLogout();
       // console.log(data.idToken);
       history('/');
-    })
+     })
+    // .then(() => {
+    //     const response = axios.get(
+    //       `https://crudcrud.com/api/4441d0f2960d4dd09e63f185ca5ca5a9/${changedEmail}`
+    //     );
+    //     return response;
+    //  // })
+    //   .then((response)=>{
+    //     console.log('resData',response.data);
+//********************************************* */
+// const productList = response.data.map((item) => {
+//       return {
+//         id: item._id,
+//         name: item.title,
+//         price: Number(item.price),
+//         image: item.imageUrl,
+//         amount: item.amount,
+//       };
+//     });
+//     console.log("poductList",productList);
+//      console.log(cartCtx);
+//     // Accumulate the items in the cartItems array
+     
+//     const sum = productList.reduce((total, item) => {
+//       return total + item.price;
+//     }, 0);
+
+   
+    // productList.forEach((item) => {
+    //   cartCtx.addItem({
+    //     id: item.id, 
+    //     name: item.title,
+    //     price: item.price,
+    //     image: item.imageUrl,
+    //     amount: Number(item.amount),
+    //   });
+    // });
+    
+
+//     // Add all the items to the cart
+    
+//     // cartCtx.addItem(cartItems);
+    
+   
+//     // console.log("cartItems",cartItems);
+  
+//     console.log(sum);
+
+  //********************* */
+      // })
     .catch((err)=>{
       alert(err.message);
     })

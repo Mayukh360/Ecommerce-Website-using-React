@@ -37,7 +37,7 @@ export default function Cart(props) {
         price={item.price}
         amount={item.amount}
         name={item.name}
-        key={item.id}
+        key={item.name}
         onRemove={() => cartItemRemoveHandler(item.id)}
         onAdd={() => cartItemAddHandler(item)}
       ></CartItem>
