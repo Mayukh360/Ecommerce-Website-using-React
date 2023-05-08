@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import CartContext from "../Store/CartContext";
+import axios from "axios";
 
 const productsArr = [
   {
@@ -52,9 +53,13 @@ const productsArr = [
   },
 ];
 
-export default function ProductItem() {
+export default  function ProductItem() {
   const CartCtx = useContext(CartContext);
-  const btnClickHandler = (item) => {
+  const enteredEmail=localStorage.getItem('email');
+    const changedemail=enteredEmail.replace("@","").replace(".","");
+  async function btnClickHandler (item)  {
+    
+    console.log(changedemail);
     CartCtx.addItem({
       id: item.title, // pass the item's id instead of generating a new one
       name: item.title,
@@ -62,6 +67,8 @@ export default function ProductItem() {
       image: item.imageUrl,
       amount: Number(item.amount),
     });
+  const response=await axios.post(`https://crudcrud.com/api/4488c3bc6ca441c4a2e4e6f06482e13f/${changedemail}`,item);
+    console.log(response.data);
   };
   return (
     <Fragment>

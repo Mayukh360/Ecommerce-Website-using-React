@@ -20,6 +20,7 @@ export default function AuthForm() {
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredEmail = emailInputRef.current.value;
+    localStorage.setItem('email',enteredEmail);
     const enteredPassword = passwordInputRef.current.value;
     console.log(enteredEmail, enteredPassword);
      

@@ -4,15 +4,18 @@ import classes from './Cart.module.css'
 import CartContext from '../Store/CartContext'
 import CartItem from './CartItem'
 import { Alert } from 'react-bootstrap';
+import AuthContext from '../../store/AuthContext'
 
 
 export default function Cart(props) {
+  const authCtx=useContext(AuthContext);
   const cartCtx = useContext(CartContext);
   const [showAlert, setShowAlert] = useState(false);
   const totalAmount = cartCtx.totalAmount;
   const hasItem = cartCtx.items.length > 0;
 
   const cartItemAddHandler = (item) => {
+    console.log(authCtx.email);
     cartCtx.addItem({
       id: item.id,
       name: item.name,
