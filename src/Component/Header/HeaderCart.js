@@ -4,19 +4,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import classes from "./HeaderCart.module.css";
-import CartContext from "../Store/CartContext";
 import { Link } from 'react-router-dom';
 import AuthContext from "../../store/AuthContext";
 
 export default function HeaderCart(props) {
   const authCtx=useContext(AuthContext);
-  const cartCtx = useContext(CartContext);
 
-  const numberOfCartItems = cartCtx.items.reduce(
-    (currNumber, item) => currNumber + item.amount,
-    0
-  );
-  const logoutHandler=()=>{
+ const logoutHandler=()=>{
  authCtx.logout();
   }
   return (
@@ -35,10 +29,10 @@ export default function HeaderCart(props) {
         
       
        
-       {authCtx.isLoggedIn && <Button onClick={props.onShow} variant="danger">
+       {authCtx.isLoggedIn && <Button style={{marginRight:'20px'}} onClick={props.onShow} variant="danger">
           <span className={classes.icon}></span>
           <span>Your Cart</span>
-          <span className={classes.badge}>{numberOfCartItems}</span>
+         
         </Button>}
       </Navbar>
     

@@ -40,14 +40,7 @@ export default function Cart(props) {
   fetchData();
  },[])
 //***** */
-  const cartItemAddHandler = (item) => {
-  
-    cartCtx.addItem({
-      id: item.id,
-      name: item.name,
-      price: item.price,
-    });
-  };
+
 
   async function cartItemRemoveHandler (id) {
     await axios.delete(`https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedEmail}/${id}`)
@@ -74,8 +67,9 @@ export default function Cart(props) {
   </ul>
   );
 
-  const orderPlaceHandler=()=>{
-    cartCtx.clearCart();
+ async function orderPlaceHandler(){
+    // cartCtx.clearCart();
+    // await axios.delete(`https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedEmail}/_all`)
     setShowAlert(true);
    
   }

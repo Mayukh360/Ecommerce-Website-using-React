@@ -1,78 +1,63 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import CartContext from "../Store/CartContext";
 import axios from "axios";
 
 const productsArr = [
   {
     title: "Colors",
-
     price: 100,
-
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-
     amount: 1,
   },
 
   {
     title: "Black and white Colors",
-
     price: 50,
-
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
     amount: 1,
   },
 
   {
     title: "Yellow and Black Colors",
-
     price: 70,
-
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-
     amount: 1,
   },
   {
     title: "Blue Color",
-
     price: 100,
-
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
-
     amount: 1,
   },
   {
     title: "Shirt",
-
     price: 100,
-
-    imageUrl: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNoaXJ0fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-
+    imageUrl:
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNoaXJ0fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+    amount: 1,
+  },
+  {
+    title: "Smart Watch",
+    price: 800,
+    imageUrl:
+      "https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/model-e/black.png",
     amount: 1,
   },
 ];
 
-export default  function ProductItem() {
-  const CartCtx = useContext(CartContext);
-  const enteredEmail=localStorage.getItem('email');
-    const changedemail=enteredEmail.replace("@","").replace(".","");
-  
-    async function btnClickHandler (item)  {
-    
-    
-    // CartCtx.addItem({
-    //   id: item.title, // pass the item's id instead of generating a new one
-    //   name: item.title,
-    //   price: item.price,
-    //   image: item.imageUrl,
-    //   amount: Number(item.amount),
-    // });
-  const response=await axios.post(`https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedemail}`,item);
-  //   console.log(response.data);
+export default function ProductItem() {
+
+  const enteredEmail = localStorage.getItem("email");
+  const changedemail = enteredEmail.replace("@", "").replace(".", "");
+
+  async function btnClickHandler(item) {
+
+   await axios.post(
+      `https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedemail}`,
+      item
+    );
  
-  // console.log(response.data);
-  };
+  }
   return (
     <Fragment>
       <Container>
@@ -81,7 +66,11 @@ export default  function ProductItem() {
             <Col key={item.title} xs={12} md={6} lg={3}>
               <div>
                 <h3>{item.title}</h3>
-                <img src={item.imageUrl} alt={item.title} style={{ height: "200px", width: "200px" }} />
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  style={{ height: "200px", width: "200px" }}
+                />
                 <div>
                   <p>
                     {" "}
