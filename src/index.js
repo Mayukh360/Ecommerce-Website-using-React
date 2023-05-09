@@ -13,15 +13,13 @@ import AuthContextProvider from './store/AuthContextProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  
- <React.StrictMode>
+//  <React.StrictMode>
   <AuthContextProvider>
-  
-   <BrowserRouter>
+  <BrowserRouter>
     <App />
     </BrowserRouter>
-   
-    </AuthContextProvider>
-  </React.StrictMode>
+   </AuthContextProvider>
+  // </React.StrictMode>
 
   
 );

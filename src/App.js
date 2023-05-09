@@ -5,7 +5,7 @@ import ProductItem from "./Component/Product/ProductItem";
 import Cart from "./Component/Cart/Cart";
 import CartProvider from "./Component/Store/CartProvider";
 import Heading from "./Component/Header/Heading";
-import { Routes, Route,Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // import RenderPage from './Render/RenderPage';
 import About from "./Pages/About";
 
@@ -39,7 +39,7 @@ function App() {
         (<Route path="/login" element={<AuthForm />} />) 
         <Route path="/" element={<Home />} />
        
-        {/* <Route path="/*" element={<Navigate replace to="/" />} /> */}
+     
       </Routes>
      
       

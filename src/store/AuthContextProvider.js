@@ -7,8 +7,7 @@ export default function AuthContextProvider(props)  {
     
     const [token,setToken]=useState(initialToken);
    
-
-    function autoLogoutHandler(){
+   function autoLogoutHandler(){
       setTimeout(()=>{
         console.log('You have been logged out');
         localStorage.removeItem('token');

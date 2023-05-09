@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 export default function About() {
+  useEffect(()=>{
+    console.log('I am from about');
+  },[])
   return (
     <div>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqkD1n7pBUNJzunVpJd63Drrp_KE4hclGt3A&usqp=CAU" ></img>
@@ -27,6 +30,7 @@ export default function About() {
         your purchase. Thank you for choosing our e-commerce website, and we
         hope you enjoy your shopping experience with us.
       </p>
+     
     </div>
   );
 }
