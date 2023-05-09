@@ -67,11 +67,17 @@ export default function Cart(props) {
   </ul>
   );
 
- async function orderPlaceHandler(){
-    // cartCtx.clearCart();
-    // await axios.delete(`https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedEmail}/_all`)
+  async function orderPlaceHandler() {
+    if (productList.length === 0) return;
+  
+    for (const item of productList) {
+      await axios.delete(
+        `https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedEmail}/${item.id}`
+      );
+    }
+    
+    setProductList([]);
     setShowAlert(true);
-   
   }
   const hasItem=productList.length;
   return (
