@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import React, { Fragment,useState } from "react";
+import { Button, Col, Container, Row,Toast,Alert } from "react-bootstrap";
 import axios from "axios";
+
 
 const productsArr = [
   {
@@ -46,6 +47,8 @@ const productsArr = [
 ];
 
 export default function ProductItem() {
+  const [showAlert, setShowAlert] = useState(false);
+   const [alertMessage, setAlertMessage] = useState("");
 
   const enteredEmail = localStorage.getItem("email");
   const changedemail = enteredEmail.replace("@", "").replace(".", "");
@@ -53,14 +56,26 @@ export default function ProductItem() {
   async function btnClickHandler(item) {
 
    await axios.post(
-      `https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedemail}`,
+      `https://crudcrud.com/api/b3ed6d9c621740ee89895274d041da87/${changedemail}`,
       item
     );
- 
+    //Custom alert "Item added to cart"
+    
+    setAlertMessage(`${item.title} added to cart`);
+    setShowAlert(true);
+
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
   }
   return (
     <Fragment>
       <Container>
+      {showAlert && (
+          <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
+            {alertMessage}
+          </Alert>
+        )}
         <Row>
           {productsArr.map((item) => (
             <Col key={item.title} xs={12} md={6} lg={3}>
@@ -78,7 +93,7 @@ export default function ProductItem() {
                   </p>
                   <Button
                     onClick={() => btnClickHandler(item)}
-                    variant="primary"
+                    variant="success"
                   >
                     Add To Cart
                   </Button>
@@ -87,7 +102,9 @@ export default function ProductItem() {
             </Col>
           ))}
         </Row>
+      
       </Container>
+     
     </Fragment>
   );
 }
