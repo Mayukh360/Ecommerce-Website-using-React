@@ -61,16 +61,16 @@ export default  function ProductItem() {
     async function btnClickHandler (item)  {
     
     
-    CartCtx.addItem({
-      id: item.title, // pass the item's id instead of generating a new one
-      name: item.title,
-      price: item.price,
-      image: item.imageUrl,
-      amount: Number(item.amount),
-    });
-  const response=await axios.post(`https://crudcrud.com/api/518cf2a72a7543b4a28274a9bc10dc81/${changedemail}`,item);
+    // CartCtx.addItem({
+    //   id: item.title, // pass the item's id instead of generating a new one
+    //   name: item.title,
+    //   price: item.price,
+    //   image: item.imageUrl,
+    //   amount: Number(item.amount),
+    // });
+  const response=await axios.post(`https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedemail}`,item);
   //   console.log(response.data);
-  // console.log("item",item);
+ 
   // console.log(response.data);
   };
   return (

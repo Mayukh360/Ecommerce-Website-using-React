@@ -17,7 +17,7 @@ const CartItem = (props) => {
       </div>
       <div >
          <Button onClick={props.onRemove} variant="outline-warning">Remove</Button>{' '}
-        <Button onClick={props.onAdd} variant="outline-info">Add</Button>{' '}
+       
       </div>
     </li>
   );

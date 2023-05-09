@@ -1,21 +1,47 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext,useState,useEffect} from 'react'
 import Modal from '../Portal/Modal'
 import classes from './Cart.module.css'
 import CartContext from '../Store/CartContext'
 import CartItem from './CartItem'
 import { Alert } from 'react-bootstrap';
-import AuthContext from '../../store/AuthContext'
+
+import axios from 'axios'
 
 
 export default function Cart(props) {
-  const authCtx=useContext(AuthContext);
+  const [productList, setProductList] = useState([]);
+ 
   const cartCtx = useContext(CartContext);
+ 
   const [showAlert, setShowAlert] = useState(false);
-  const totalAmount = cartCtx.totalAmount;
-  const hasItem = cartCtx.items.length > 0;
+  
+  // const hasItem = cartCtx.items.length > 0;
+  //******* */
+  const enteredEmail=localStorage.getItem('email');
+  const changedEmail=enteredEmail.replace("@","").replace(".","");
+ 
+  async function fetchData() {
+    const response = await axios.get(`https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedEmail}`);
+    const productList = response.data.map((item) => {
+      return {
+        id: item._id,
+        name: item.title,
+        price: Number(item.price),
+        image: item.imageUrl,
+        amount: item.amount,
+      };
+    });
+    setProductList(productList);
+    console.log(productList);
+  }    
 
+
+ useEffect(()=>{
+  fetchData();
+ },[])
+//***** */
   const cartItemAddHandler = (item) => {
-    console.log(authCtx.email);
+  
     cartCtx.addItem({
       id: item.id,
       name: item.name,
@@ -23,23 +49,26 @@ export default function Cart(props) {
     });
   };
 
-  const cartItemRemoveHandler = (id) => {
-    cartCtx.removeItem(id);
+  async function cartItemRemoveHandler (id) {
+    await axios.delete(`https://crudcrud.com/api/5179291c79844f38a688deab9be73e12/${changedEmail}/${id}`)
+    fetchData();
   };
 
-
+    const sum = productList.reduce((total, item) => {
+      return total + item.price;
+    }, 0);
 
   const cartItems=(
     <ul className={classes["cart-items"]}>
-    {cartCtx.items.map((item) => (
+    {productList.map((item) => (
       <CartItem
        image ={item.image}
         price={item.price}
         amount={item.amount}
         name={item.name}
-        key={item.name}
+        key={item.id}
         onRemove={() => cartItemRemoveHandler(item.id)}
-        onAdd={() => cartItemAddHandler(item)}
+      
       ></CartItem>
     ))}
   </ul>
@@ -50,13 +79,14 @@ export default function Cart(props) {
     setShowAlert(true);
    
   }
-
+  const hasItem=productList.length;
   return (
     <Modal onHide={props.onHide}>
+      {!hasItem && <h2>Loading...</h2>}
       {cartItems}
           <div className={classes.total} >
       <span>Total</span>
-      <span>{totalAmount}₹</span>
+      <span>{sum}₹</span>
     </div>
     <div className={classes.actions}>
       <button onClick={props.onHide} className={classes["button--alt"]} >
