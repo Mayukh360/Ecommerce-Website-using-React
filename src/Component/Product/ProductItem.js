@@ -4,6 +4,35 @@ import axios from "axios";
 
 
 const productsArr = [
+  
+  {
+    title: "Shirt",
+    price: 100,
+    imageUrl:
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNoaXJ0fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+    amount: 1,
+  },
+  {
+    title: "Smart Watch",
+    price: 800,
+    imageUrl:
+      "https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/model-e/black.png",
+    amount: 1,
+  },
+  {
+    title: "Mobile",
+    price: 48000,
+    imageUrl:
+      "https://kddi-h.assetsadobe3.com/is/image/content/dam/au-com/mobile/mb_img_58.jpg?scl=1",
+    amount: 1,
+  },
+  {
+    title: "Shoes",
+    price: 800,
+    imageUrl:
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5cdbd9c71cd2432db2e7cf989bf6c050_9366/Gazelle_Shoes_Green_IG0671_HM1.jpg",
+    amount: 1,
+  },
   {
     title: "Colors",
     price: 100,
@@ -30,20 +59,7 @@ const productsArr = [
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
     amount: 1,
   },
-  {
-    title: "Shirt",
-    price: 100,
-    imageUrl:
-      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNoaXJ0fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-    amount: 1,
-  },
-  {
-    title: "Smart Watch",
-    price: 800,
-    imageUrl:
-      "https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/model-e/black.png",
-    amount: 1,
-  },
+  
 ];
 
 export default function ProductItem() {
@@ -70,7 +86,7 @@ export default function ProductItem() {
   }
   return (
     <Fragment>
-      <Container>
+      <Container style={{marginBottom:"1rem", marginTop:"1rem"}}>
       {showAlert && (
           <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
             {alertMessage}

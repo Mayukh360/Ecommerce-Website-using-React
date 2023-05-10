@@ -13,6 +13,7 @@ import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import AuthForm from "./Pages/AuthForm";
 import AuthContext from "./store/AuthContext";
+import Footer from "./Component/Footer/Footer";
 
 function App() {
   // const Navigate=useNavigate()
@@ -42,7 +43,7 @@ function App() {
      
       </Routes>
      
-      
+      <Footer/>
     </CartProvider>
   );
 }

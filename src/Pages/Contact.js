@@ -18,7 +18,7 @@ export default function Contact() {
     // console.log("Email:", email);
     // console.log("Phone Number:", phone);
     // console.log(obj);
-    const response = await fetch(
+      await fetch(
       "https://e-commerce-project-75d20-default-rtdb.firebaseio.com//contacts.json",
       {
         method: "POST",
