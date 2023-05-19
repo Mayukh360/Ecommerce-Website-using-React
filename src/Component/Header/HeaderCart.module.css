@@ -39,6 +39,10 @@
 .bump {
   animation: bump 300ms ease-out;
 }
+.gradient{
+  background-color: rgb(40, 38, 38);
+  color: rgb(6, 87, 119)
+}
 
 @keyframes bump {
   0% {

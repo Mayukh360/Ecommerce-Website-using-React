@@ -6,7 +6,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
+  
  async function formSubmitHandler  (event){
     event.preventDefault();
     const obj={

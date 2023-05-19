@@ -15,7 +15,9 @@ export default function HeaderCart(props) {
   }
   return (
     
-      <Navbar bg="dark" variant="dark">
+      <Navbar  variant="dark"  style={{
+        background: "linear-gradient(to right, rgb(113, 4, 113), rgb(40, 38, 38))",
+      }}>
         <Container>
           <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
           <Nav className="me-auto">

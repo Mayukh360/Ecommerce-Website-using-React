@@ -1,50 +1,37 @@
 import React, { Fragment,useState } from "react";
 import { Button, Col, Container, Row,Alert } from "react-bootstrap";
 import axios from "axios";
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const productsArr = [
   
-  {
-    title: "Shirt",
-    price: 100,
-    imageUrl:
-      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNoaXJ0fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-    amount: 1,
-  },
- 
-
-  {
-    title: "Jacket",
-    price: 100,
-    imageUrl:
-      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1634645738-200964205-1-stone.jpg?crop=1.00xw:0.785xh;0,0.0443xh&resize=980:*",
-    amount: 1,
-  },
+    {
+        title: "Shoes",
+        price: 800,
+        imageUrl:
+          "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5cdbd9c71cd2432db2e7cf989bf6c050_9366/Gazelle_Shoes_Green_IG0671_HM1.jpg",
+        amount: 1,
+      },
+  
   
   
 ];
 
-export default function ProductItem() {
+export default function ProductItem4() {
   const [showAlert, setShowAlert] = useState(false);
    const [alertMessage, setAlertMessage] = useState("");
-   const navigate=useNavigate()
+   const navigate=useNavigate();
 
   const enteredEmail = localStorage.getItem("email");
   const changedemail = enteredEmail.replace("@", "").replace(".", "");
 
   async function btnClickHandler(item) {
 
-  //  await axios.post(
-  //     `https://crudcrud.com/api/58289aeebc5542b9b67da0ff1ce0ab14/${changedemail}`,
-  //     item
-  //   );
-    await fetch(`https://e-commerce-2-ad090-default-rtdb.firebaseio.com//user/${changedemail}.json`,{
-      method:'POST',
-      body: JSON.stringify(item),
-      headers:{"Content-Type": "application/json"}
-    }) /// complete the code using fire base
+   await axios.post(
+      `https://crudcrud.com/api/58289aeebc5542b9b67da0ff1ce0ab14/${changedemail}`,
+      item
+    );
     //Custom alert "Item added to cart"
     
     setAlertMessage(`${item.title} added to cart`);
@@ -55,7 +42,7 @@ export default function ProductItem() {
     }, 2000);
   }
   const navigateHandler=()=>{
-    navigate('/womensclothing')
+    navigate('/accessories')
   }
   return (
     <Fragment>
@@ -91,7 +78,7 @@ export default function ProductItem() {
             </Col>
           ))}
         </Row>
-       <span>1</span> <button onClick={navigateHandler}>Next</button>
+       <span>4</span> <button onClick={navigateHandler}>Next</button>
       
       </Container>
      

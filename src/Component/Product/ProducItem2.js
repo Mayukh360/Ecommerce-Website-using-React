@@ -1,52 +1,33 @@
-import React, { Fragment,useState } from "react";
-import { Button, Col, Container, Row,Alert } from "react-bootstrap";
+import React, { Fragment, useState } from "react";
+import { Button, Col, Container, Row, Alert } from "react-bootstrap";
 import axios from "axios";
-import { json, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const productsArr = [
-  
   {
-    title: "Shirt",
+    title: "Pink Top",
     price: 100,
     imageUrl:
-      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNoaXJ0fGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+      "https://lppool.catalogsites.net/lf?source=url[file:MasterSite/HD18/hd18_233_new_2.jpg]&scale=width[767],height[712]&sink=format[jpg],quality[80]",
     amount: 1,
   },
- 
-
-  {
-    title: "Jacket",
-    price: 100,
-    imageUrl:
-      "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1634645738-200964205-1-stone.jpg?crop=1.00xw:0.785xh;0,0.0443xh&resize=980:*",
-    amount: 1,
-  },
-  
-  
 ];
 
-export default function ProductItem() {
+export default function ProductItem2() {
   const [showAlert, setShowAlert] = useState(false);
-   const [alertMessage, setAlertMessage] = useState("");
-   const navigate=useNavigate()
+  const [alertMessage, setAlertMessage] = useState("");
+  const navigate = useNavigate();
 
   const enteredEmail = localStorage.getItem("email");
   const changedemail = enteredEmail.replace("@", "").replace(".", "");
 
   async function btnClickHandler(item) {
-
-  //  await axios.post(
-  //     `https://crudcrud.com/api/58289aeebc5542b9b67da0ff1ce0ab14/${changedemail}`,
-  //     item
-  //   );
-    await fetch(`https://e-commerce-2-ad090-default-rtdb.firebaseio.com//user/${changedemail}.json`,{
-      method:'POST',
-      body: JSON.stringify(item),
-      headers:{"Content-Type": "application/json"}
-    }) /// complete the code using fire base
+    await axios.post(
+      `https://crudcrud.com/api/58289aeebc5542b9b67da0ff1ce0ab14/${changedemail}`,
+      item
+    );
     //Custom alert "Item added to cart"
-    
+
     setAlertMessage(`${item.title} added to cart`);
     setShowAlert(true);
 
@@ -54,13 +35,16 @@ export default function ProductItem() {
       setShowAlert(false);
     }, 2000);
   }
-  const navigateHandler=()=>{
-    navigate('/womensclothing')
-  }
+  const navigateHandler = () => {
+    navigate("/kidsclothing");
+  };
+  const prevnavigateHandler = () => {
+    navigate("/productitem");
+  };
   return (
     <Fragment>
-      <Container style={{marginBottom:"1rem", marginTop:"1rem"}}>
-      {showAlert && (
+      <Container style={{ marginBottom: "1rem", marginTop: "1rem" }}>
+        {showAlert && (
           <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
             {alertMessage}
           </Alert>
@@ -91,10 +75,22 @@ export default function ProductItem() {
             </Col>
           ))}
         </Row>
-       <span>1</span> <button onClick={navigateHandler}>Next</button>
-      
+        <div className="flex justify-center items-center mt-4">
+          <button
+            onClick={prevnavigateHandler}
+            className="mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Previous
+          </button>
+          <span className="mx-2">2</span>
+          <button
+            onClick={navigateHandler}
+            className="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Next
+          </button>
+        </div>
       </Container>
-     
     </Fragment>
   );
 }

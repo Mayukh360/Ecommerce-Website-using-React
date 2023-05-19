@@ -5,6 +5,9 @@ import ProductItem from '../Component/Product/ProductItem'
 import Home from '../Pages/Home'
 import Contact from '../Pages/Contact'
 import AuthForm from '../Pages/AuthForm'
+import ProductItem2 from '../Component/Product/ProducItem2'
+import ProductItem3 from '../Component/Product/ProductItem3'
+import ProductItem4 from '../Component/Product/ProductItem3'
 
 const router= createBrowserRouter([
     { path:'/about', element:<About/>},
@@ -12,6 +15,10 @@ const router= createBrowserRouter([
     { path:'/productitem', element:<ProductItem/>},
     { path:'/login', element:<AuthForm/>},
     { path:'/', element:<Home/>},
+    { path:'/womensclothing', element:<ProductItem2/>},
+    { path:'/kidsclothing', element:<ProductItem3/>},
+    { path:'/shoes', element:<ProductItem4/>},
+    { path:'/accessories', element:<ProductItem4/>},
   
 ])
 export default function RenderPage() {

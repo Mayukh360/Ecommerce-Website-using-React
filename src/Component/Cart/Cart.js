@@ -17,20 +17,23 @@ export default function Cart(props) {
   const changedEmail = enteredEmail.replace("@", "").replace(".", "");
 
   async function fetchData() {
-    const response = await axios.get(
-      `https://crudcrud.com/api/34973572ec854db9a61f8e68aa171895/${changedEmail}`
+    const response = await fetch(
+      `https://e-commerce-2-ad090-default-rtdb.firebaseio.com//user/${changedEmail}.json`
     );
-    const productList = response.data.map((item) => {
-      return {
-        id: item._id,
-        name: item.title,
-        price: Number(item.price),
-        image: item.imageUrl,
-        amount: item.amount,
-      };
-    });
-    setProductList(productList);
-    // console.log(productList);
+    const data = await response.json();
+    if (data) {
+      const productList = Object.keys(data).map((key) => ({
+        id: key,
+        name: data[key].title,
+        price: Number(data[key].price),
+        image: data[key].imageUrl,
+        amount: data[key].amount,
+      }));
+      setProductList(productList);
+      console.log(productList);
+    } else {
+      setProductList([]);
+    }
   }
 
   useEffect(() => {
@@ -40,10 +43,14 @@ export default function Cart(props) {
   //***** */
 
   async function cartItemRemoveHandler(id) {
-    await axios.delete(
-      `https://crudcrud.com/api/34973572ec854db9a61f8e68aa171895/${changedEmail}/${id}`
-    );
-    fetchData();
+    try {
+      await axios.delete(
+        `https://e-commerce-2-ad090-default-rtdb.firebaseio.com/user/${changedEmail}/${id}.json`
+      );
+      fetchData();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const sum = productList.reduce((total, item) => {
@@ -68,19 +75,23 @@ export default function Cart(props) {
   async function orderPlaceHandler() {
     if (productList.length === 0) return;
 
-    for (const item of productList) {
-       axios.delete(
-        `https://crudcrud.com/api/34973572ec854db9a61f8e68aa171895/${changedEmail}/${item.id}`
-      );
-    }
+    try {
+      for (const item of productList) {
+        axios.delete(
+          `https://e-commerce-2-ad090-default-rtdb.firebaseio.com/user/${changedEmail}/${item.id}.json`
+        );
+      }
 
-    setProductList([]);
-    setShowAlert(true);
+      setProductList([]);
+      setShowAlert(true);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
   const hasItem = productList.length > 0;
   return (
     <Modal onHide={props.onHide}>
-     
       {cartItems}
       <div className={classes.total}>
         <span>Total</span>
