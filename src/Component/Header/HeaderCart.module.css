@@ -18,8 +18,9 @@
 }
 
 .icon {
-  width: 1.35rem;
-  height: 1.35rem;
+  
+  width: 1px;
+  height: 3rpx;
   margin-right: 0.5rem;
 }
 
@@ -35,6 +36,21 @@
 .button:active .badge {
   background-color: #92320c;
 }
+/* Update the HeaderCart.module.css file */
+
+.cartButton {
+  display: flex;
+  align-items: center;
+}
+
+.cartIcon {
+  margin-right: 5px;
+}
+
+.cartText {
+  font-size: 18px;
+}
+
 
 .bump {
   animation: bump 300ms ease-out;

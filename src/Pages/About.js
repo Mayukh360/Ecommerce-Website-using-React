@@ -1,36 +1,52 @@
-import React,{useEffect} from "react";
+import React from "react";
+import classes from "./About.module.css";
 
 export default function About() {
-  useEffect(()=>{
-    console.log('I am from about');
-  },[])
   return (
-    <div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqkD1n7pBUNJzunVpJd63Drrp_KE4hclGt3A&usqp=CAU" ></img>
-      <p>
-        Welcome to our e-commerce website, where shopping is made easy and
-        convenient for you. Our website is designed to provide you with a
-        hassle-free shopping experience that is both enjoyable and secure. At
-        our e-commerce store, we offer a wide range of products that are
-        carefully selected to meet your everyday needs. From electronics to
-        fashion, beauty, home and living, and everything in between, we have got
-        you covered. We also offer competitive prices on all our products, so
-        you can be assured of getting great value for your money. Our website is
-        user-friendly, and you can easily navigate through the different
-        categories to find what you are looking for. Our search functionality is
-        also designed to help you find your desired products quickly and easily.
-        We also offer a secure and convenient checkout process that is designed
-        to protect your personal and financial information. We understand that
-        shopping online can be a daunting task, which is why we have a dedicated
-        customer support team that is always ready to assist you with any
-        queries or concerns you may have. Whether it is a question about a
-        product, a delivery issue, or a return, our team is always here to help.
-        We take pride in providing our customers with the best possible shopping
-        experience, and we are committed to ensuring that you are satisfied with
-        your purchase. Thank you for choosing our e-commerce website, and we
-        hope you enjoy your shopping experience with us.
-      </p>
-     
+    <div className={classes.about}>
+      <div className={classes.imageContainer}>
+        <img
+          src="https://wallpaperaccess.com/full/2593068.jpg"
+          alt="About Us"
+          className={classes.image}
+        />
+      </div>
+      <div className={classes.content}>
+        <p style={{ fontSize: "1.1rem" }}>
+          Welcome to our e-commerce website! We are your one-stop destination
+          for all your shopping needs. Whether you're looking for trendy and
+          stylish men's clothing, fashionable women's clothing, adorable
+          kidswear, comfortable shoes, or the latest electronics, we've got you
+          covered. Our extensive collection of men's clothing features a wide
+          range of styles, from casual wear to formal attire. Discover trendy
+          t-shirts, stylish shirts, comfortable jeans, and fashionable
+          accessories that will elevate your wardrobe and keep you looking
+          sharp. Ladies, get ready to indulge in our fabulous selection of
+          women's clothing. From elegant dresses and chic tops to trendy bottoms
+          and fashionable accessories, you'll find everything you need to
+          express your personal style and stay ahead of the fashion game. For
+          the little ones, we have a delightful range of kidswear that combines
+          comfort, durability, and style. From adorable baby clothes to trendy
+          outfits for older children, dressing your kids has never been this
+          fun. Step into style with our collection of shoes. Whether you're
+          looking for comfortable sneakers, classy heels, or versatile boots, we
+          have the perfect pair to complement any outfit and keep your feet
+          happy. In addition to fashion, we also offer the latest electronics to
+          keep you connected and entertained. Explore our wide range of
+          smartphones, tablets, laptops, smartwatches, and more, all from top
+          brands that deliver quality and innovation. At our e-commerce store,
+          we prioritize customer satisfaction and strive to provide a seamless
+          shopping experience. Our user-friendly website and intuitive
+          navigation make it easy for you to find exactly what you're looking
+          for. We also offer secure payment options and reliable shipping
+          services to ensure your items reach you safely and on time. Thank you
+          for choosing our e-commerce website. We are dedicated to bringing you
+          the best products, exceptional customer service, and an enjoyable
+          shopping experience. Start exploring our collection now and elevate
+          your style with just a few clicks!
+          
+        </p>
+      </div>
     </div>
   );
 }

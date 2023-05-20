@@ -1,0 +1,23 @@
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    max-width: 100%;
+  }
+  
+  .image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100rem;
+  }
+  
+  .content {
+    flex: 1;
+    margin-left: 1rem;
+  }
+  
