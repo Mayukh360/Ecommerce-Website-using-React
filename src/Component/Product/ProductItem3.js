@@ -13,6 +13,55 @@ const productsArr = [
       "https://www.redwolf.in/image/cache/catalog/sweatshirts/spider-man-logo-hoodie-india-700x700.jpg",
     amount: 1,
   },
+  {
+    title: "T-Shirt Pack of Three",
+    price: 100,
+    imageUrl:
+      "https://imagescdn.pantaloons.com/img/app/product/7/736575-8227267.jpg",
+    amount: 1,
+  },
+  {
+    title: "Blue Denim Dress",
+    price: 100,
+    imageUrl:
+      "https://imagescdn.pantaloons.com/img/app/product/7/740340-8294647.jpg",
+    amount: 1,
+  },
+  {
+    title: "Pink Ghagra Choli ",
+    price: 100,
+    imageUrl:
+      "https://imagescdn.pantaloons.com/img/app/product/7/757966-8655965.jpg",
+    amount: 1,
+  },
+  {
+    title: "Blue T-Shirt ",
+    price: 100,
+    imageUrl:
+      "https://imagescdn.pantaloons.com/img/app/product/7/726813-8058130.jpg",
+    amount: 1,
+  },
+  {
+    title: "Peach regular Jumpsuit",
+    price: 100,
+    imageUrl:
+      "https://imagescdn.pantaloons.com/img/app/product/7/726819-8058155.jpg",
+    amount: 1,
+  },
+  {
+    title: "Blue Dress",
+    price: 100,
+    imageUrl:
+      "https://imagescdn.pantaloons.com/img/app/product/7/755655-8630093.jpg",
+    amount: 1,
+  },
+  {
+    title: "White Top",
+    price: 100,
+    imageUrl:
+      "https://imagescdn.pantaloons.com/img/app/product/7/735219-9292768.jpg",
+    amount: 1,
+  },
   
   
   

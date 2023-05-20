@@ -34,7 +34,7 @@ function App() {
     <CartProvider>
       {cartIsVisible && <Cart onHide={hideCartHandler} />}
       <HeaderCart onShow={showCartHandler} />
-      {/* <Heading /> */}
+      <Heading />
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -45,10 +45,26 @@ function App() {
         )}
         (<Route path="/login" element={<AuthForm />} />)
         <Route path="/" element={<Home />} />
-        <Route path="/womensclothing" element={<ProductItem2 />} />
-        <Route path="/kidsclothing" element={<ProductItem3/>} />
-        <Route path="/shoes" element={<ProductItem4/>} />
-        <Route path="/accessories" element={<ProductItem5/>} />
+        {authCtx.isLoggedIn ? (
+          <Route path="/womensclothing" element={<ProductItem2 />} />
+        ) : (
+          <Route path="/womensclothing" element={<AuthForm />} />
+        )}
+        {authCtx.isLoggedIn ? (
+          <Route path="/kidsclothing" element={<ProductItem3 />} />
+        ) : (
+          <Route path="/womensclothing" element={<AuthForm />} />
+        )}
+        {authCtx.isLoggedIn ? (
+          <Route path="/shoes" element={<ProductItem4 />} />
+        ) : (
+          <Route path="/shoes" element={<AuthForm />} />
+        )}
+        {authCtx.isLoggedIn ? (
+          <Route path="/accessories" element={<ProductItem5 />} />
+        ) : (
+          <Route path="/accessories" element={<AuthForm />} />
+        )}
       </Routes>
 
       <Footer />

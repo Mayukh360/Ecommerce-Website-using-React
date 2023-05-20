@@ -6,17 +6,59 @@ import classes from './Product.module.css'
 
 const productsArr = [
   {
-    title: "Smart Watch",
+    title: "Boat Smart Watch",
     price: 800,
     imageUrl:
       "https://www.mivi.in/cdn-cgi/image/width=2000,f=auto,quality=90/assets/model-e/black.png",
     amount: 1,
   },
   {
-    title: "Mobile",
+    title: "I-Phone",
     price: 48000,
     imageUrl:
       "https://kddi-h.assetsadobe3.com/is/image/content/dam/au-com/mobile/mb_img_58.jpg?scl=1",
+    amount: 1,
+  },
+  {
+    title: "Samsung S-23 Ultra",
+    price: 90000,
+    imageUrl:
+      "https://m.media-amazon.com/images/I/61VfL-aiToL._SX679_.jpg",
+    amount: 1,
+  },
+  {
+    title: "Samsung Z-Flip",
+    price: 78000,
+    imageUrl:
+      "https://m.media-amazon.com/images/I/71MmJNwZcML._SX679_.jpg",
+    amount: 1,
+  },
+  {
+    title: "Oneplus 11",
+    price: 61000,
+    imageUrl:
+      "https://m.media-amazon.com/images/I/61amb0CfMGL._SX679_.jpg",
+    amount: 1,
+  },
+  {
+    title: "Apple Smart Watch",
+    price: 33000,
+    imageUrl:
+      "https://m.media-amazon.com/images/I/71LfnkRgZ4L._SX679_.jpg",
+    amount: 1,
+  },
+  {
+    title: "Hp Laptop",
+    price: 56000,
+    imageUrl:
+      "https://m.media-amazon.com/images/I/81koa5VFokL._SX679_.jpg",
+    amount: 1,
+  },
+  {
+    title: "Zebronics Keyboard",
+    price: 999,
+    imageUrl:
+      "https://m.media-amazon.com/images/I/71fWGZ2GOOL._SX679_.jpg",
     amount: 1,
   },
 ];

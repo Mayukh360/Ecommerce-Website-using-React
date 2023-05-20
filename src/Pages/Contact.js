@@ -14,10 +14,7 @@ export default function Contact() {
       email,
       phone
     }
-    // console.log("Name:", name);
-    // console.log("Email:", email);
-    // console.log("Phone Number:", phone);
-    // console.log(obj);
+   
       await fetch(
       "https://e-commerce-project-75d20-default-rtdb.firebaseio.com//contacts.json",
       {
@@ -35,10 +32,10 @@ export default function Contact() {
   };
 
   return (
-  <Card>
   
-    <Form onSubmit={formSubmitHandler} >
-    <h3> Fill This Form, we will get back to you soon</h3>
+  
+    <Form onSubmit={formSubmitHandler} className="w-full max-w-sm mx-auto px-4 py-3  m-4 shadow-lg">
+      <h3 className="text-xl font-semibold mb-6">Fill This Form, we will get back to you soon</h3>
       <Form.Group className="mb-3">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -55,11 +52,11 @@ export default function Contact() {
         <Form.Control type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Submit
       </Button>
     </Form>
 
-    </Card>
+  
   );
 }

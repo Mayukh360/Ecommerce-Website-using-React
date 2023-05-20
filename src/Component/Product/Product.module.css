@@ -2,5 +2,5 @@
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); Add a box shadow effect */
     transform: scale(1.03); /* Add a slight scale-up effect */
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for smooth animation */
+   
   }
-  

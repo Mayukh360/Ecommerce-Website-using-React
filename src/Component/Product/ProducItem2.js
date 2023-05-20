@@ -7,56 +7,56 @@ import classes from './Product.module.css'
 const productsArr = [
   {
     title: "Bridgton Linen Dress",
-    price: 100,
+    price: 1900,
     imageUrl:
       "https://media.thereformation.com/image/upload/f_auto,q_auto,dpr_2.0/w_600,c_scale//PRD-SFCC/1310246/WHITE/1310246.1.WHITE?_s=RAABAB0",
     amount: 1,
   },
   {
     title: "Saskia Dress",
-    price: 100,
+    price: 1900,
     imageUrl:
       "https://media.thereformation.com/image/upload/f_auto,q_auto,dpr_2.0/w_600,c_scale//PRD-SFCC/1307914/AMARO/1307914.1.AMARO?_s=RAABAB0",
     amount: 1,
   },
   {
     title: "Casette Silk Dress",
-    price: 100,
+    price: 2300,
     imageUrl:
       "https://media.thereformation.com/image/upload/f_auto,q_auto,dpr_2.0/w_600,c_scale//PRD-SFCC/1311240/AURA/1311240.2.AURA?_s=RAABAB0",
     amount: 1,
   },
   {
     title: "Women Off-Shoulder",
-    price: 100,
+    price: 3000,
     imageUrl:
       "https://m.media-amazon.com/images/I/71JRq9JiDHL._UY741_.jpg",
     amount: 1,
   },
   {
     title: "Amara Dress",
-    price: 100,
+    price: 3200,
     imageUrl:
       "https://media.thereformation.com/image/upload/f_auto,q_auto,dpr_2.0/w_600,c_scale//PRD-SFCC/1312724/TRIBUNE_STRIPE/1312724.1.TRIBUNE_STRIPE?_s=RAABAB0",
     amount: 1,
   },
   {
-    title: "knit Dress",
-    price: 100,
+    title: "Knit Dress",
+    price: 1900,
     imageUrl:
       "https://media.thereformation.com/image/list/fn_select:jq:first(.%5B%5D%7Cif%20has(%22metadata%22)%20then%20select(any(.metadata%5B%5D;%20.external_id%20==%20%22sfcc-gallery-position%22%20and%20.value%20==%202))%20else%20empty%20end)/f_auto,q_auto,dpr_2.0/w_600,c_scale/1313077-SSG.json?_s=RAABAB0",
     amount: 1,
   },
   {
     title: "Leather Jacket",
-    price: 100,
+    price: 2700,
     imageUrl:
       "https://burst.shopifycdn.com/photos/model-with-leather-jacket-over-shoulders.jpg?width=1200&format=pjpg&exif=1&iptc=1",
     amount: 1,
   },
   {
     title: "Tanis Dress",
-    price: 100,
+    price: 2900,
     imageUrl:
       "https://media.thereformation.com/image/upload/f_auto,q_auto,dpr_2.0/w_600,c_scale//PRD-SFCC/1313082/CITRON/1313082.1.CITRON?_s=RAABAB0",
     amount: 1,
