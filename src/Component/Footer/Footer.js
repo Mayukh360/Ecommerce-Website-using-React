@@ -10,7 +10,7 @@ const Footer = () => {
       background: "linear-gradient(to right, rgb(113, 4, 113), rgb(40, 38, 38))",
     }}>
       <div className="footer-col">
-        <h3>Shop</h3>
+        <h3 style={{marginLeft: '29px'}}>Shop</h3>
         <ul className="footer-links">
          
         <li  className="font-bold"><Nav.Link as={Link} to="/productitem">Men's Clothing</Nav.Link></li>  
@@ -22,12 +22,16 @@ const Footer = () => {
         </ul>
       </div>
       <div className="footer-col">
-        <h3>About</h3>
+        <h3 style={{marginLeft: '29px'}}>About</h3>
         <ul className="footer-links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
+        <li  className="font-bold"><Nav.Link as={Link} to="/about">About Us</Nav.Link></li>
+          {/* <li><a href="#">About Us</a></li> */}
+          <li  className="font-bold"><Nav.Link as={Link} to="/contact">Contact us</Nav.Link></li>
+          {/* <li><a href="#">Contact Us</a></li> */}
+          <li  className="font-bold"><Nav.Link as={Link} to="/privacy">Privacy Policy</Nav.Link></li>
+          {/* <li><a href="#">Privacy Policy</a></li> */}
+          <li  className="font-bold"><Nav.Link as={Link} to="/terms">Terms and condition</Nav.Link></li>
+          {/* <li><a href="#">Terms & Conditions</a></li> */}
         </ul>
       </div>
       <div className="footer-col">

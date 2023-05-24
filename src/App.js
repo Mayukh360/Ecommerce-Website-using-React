@@ -17,6 +17,8 @@ import ProductItem2 from "./Component/Product/ProducItem2";
 import ProductItem3 from "./Component/Product/ProductItem3";
 import ProductItem4 from "./Component/Product/ProductItem4";
 import ProductItem5 from "./Component/Product/ProductItem5";
+import Privacy from "./Pages/Privacy";
+import Terms from "./Pages/Terms";
 
 function App() {
   // const Navigate=useNavigate()
@@ -38,6 +40,8 @@ function App() {
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
         {authCtx.isLoggedIn ? (
           <Route path="/productitem" element={<ProductItem />} />
         ) : (

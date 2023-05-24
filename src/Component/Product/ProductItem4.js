@@ -74,7 +74,7 @@ export default function ProductItem4() {
 
   async function btnClickHandler(item) {
     await axios.post(
-      `https://crudcrud.com/api/58289aeebc5542b9b67da0ff1ce0ab14/${changedemail}`,
+      `https://e-commerce-2-ad090-default-rtdb.firebaseio.com//user/${changedemail}.json`,
       item
     );
     //Custom alert "Item added to cart"
