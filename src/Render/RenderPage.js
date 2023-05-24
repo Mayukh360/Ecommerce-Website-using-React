@@ -16,7 +16,7 @@ const router= createBrowserRouter([
     { path:'/contact', element:<Contact/>},
     { path:'/productitem', element:<ProductItem/>},
     { path:'/login', element:<AuthForm/>},
-    { path:'/', element:<Home/>},
+    { path:'/Ecommerce-Website-using-React', element:<Home/>},
     { path:'/womensclothing', element:<ProductItem2/>},
     { path:'/kidsclothing', element:<ProductItem3/>},
     { path:'/shoes', element:<ProductItem4/>},

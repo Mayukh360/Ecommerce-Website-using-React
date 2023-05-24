@@ -48,7 +48,7 @@ function App() {
           <Route path="/productitem" element={<AuthForm />} />
         )}
         (<Route path="/login" element={<AuthForm />} />)
-        <Route path="/" element={<Home />} />
+        <Route path="/Ecommerce-Website-using-React" element={<Home />} />
         {authCtx.isLoggedIn ? (
           <Route path="/womensclothing" element={<ProductItem2 />} />
         ) : (

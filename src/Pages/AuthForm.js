@@ -67,7 +67,7 @@ export default function AuthForm(props) {
       
       AuthCtx.autoLogout();
       // console.log(data.idToken);
-      history('/');
+      history('/Ecommerce-Website-using-React');
      })
     // .then(() => {
     //     const response = axios.get(

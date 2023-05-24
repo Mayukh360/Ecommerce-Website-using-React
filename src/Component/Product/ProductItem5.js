@@ -127,7 +127,7 @@ export default function ProductItem5() {
         <div className="flex justify-center items-center mt-4">
           <button
             onClick={prevnavigateHandler}
-            className="ml-2 bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded  border-2 border-gray-500"
+            className="mr-2 bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded  border-2 border-gray-500"
           >
             Previous
           </button>
