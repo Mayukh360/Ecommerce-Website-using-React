@@ -8,7 +8,7 @@ const productsArr = [
   
   {
     title: "Spiderman Hoodie",
-    price: 100,
+    price: 999,
     imageUrl:
       "https://www.redwolf.in/image/cache/catalog/sweatshirts/spider-man-logo-hoodie-india-700x700.jpg",
     amount: 1,
@@ -22,7 +22,7 @@ const productsArr = [
   },
   {
     title: "Blue Denim Dress",
-    price: 100,
+    price: 1900,
     imageUrl:
       "https://imagescdn.pantaloons.com/img/app/product/7/740340-8294647.jpg",
     amount: 1,
@@ -36,28 +36,28 @@ const productsArr = [
   },
   {
     title: "Blue T-Shirt ",
-    price: 100,
+    price: 1500,
     imageUrl:
       "https://imagescdn.pantaloons.com/img/app/product/7/726813-8058130.jpg",
     amount: 1,
   },
   {
     title: "Peach regular Jumpsuit",
-    price: 100,
+    price: 1000,
     imageUrl:
       "https://imagescdn.pantaloons.com/img/app/product/7/726819-8058155.jpg",
     amount: 1,
   },
   {
     title: "Blue Dress",
-    price: 100,
+    price: 900,
     imageUrl:
       "https://imagescdn.pantaloons.com/img/app/product/7/755655-8630093.jpg",
     amount: 1,
   },
   {
     title: "White Top",
-    price: 100,
+    price: 1100,
     imageUrl:
       "https://imagescdn.pantaloons.com/img/app/product/7/735219-9292768.jpg",
     amount: 1,
