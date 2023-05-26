@@ -24,7 +24,7 @@ export default function HeaderCart(props) {
       }}
     >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/Ecommerce-Website-using-React">
           Home
         </Navbar.Brand>
         <Nav className="me-auto">
