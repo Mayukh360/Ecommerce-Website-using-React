@@ -34,10 +34,10 @@ export default function AuthForm(props) {
     let url;
     if (isLogin) {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDXx5szR2zhd9OQlqBegt7PJUE8RXQAqAk";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCSdHP_7s51j4ShLExL8TktLdsxnztu_w4";
     } else {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDXx5szR2zhd9OQlqBegt7PJUE8RXQAqAk";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCSdHP_7s51j4ShLExL8TktLdsxnztu_w4";
     }
     fetch(url, {
       method: "POST",
