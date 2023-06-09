@@ -1,15 +1,31 @@
 {
   "files": {
-    "main.css": "/Ecommerce-Website-using-React/static/css/main.3a126da0.css",
-    "main.js": "/Ecommerce-Website-using-React/static/js/main.d4594477.js",
+    "main.css": "/Ecommerce-Website-using-React/static/css/main.d02f5600.css",
+    "main.js": "/Ecommerce-Website-using-React/static/js/main.fb00d0e2.js",
     "static/js/787.a91053ce.chunk.js": "/Ecommerce-Website-using-React/static/js/787.a91053ce.chunk.js",
+    "static/media/dress2.jpeg": "/Ecommerce-Website-using-React/static/media/dress2.1ca9132cb37e1d5362d4.jpeg",
+    "static/media/dress7.jpg": "/Ecommerce-Website-using-React/static/media/dress7.4e1d17385f4f60e46e0d.jpg",
+    "static/media/dress8.webp": "/Ecommerce-Website-using-React/static/media/dress8.e7b78f37be770a61bd57.webp",
+    "static/media/dress3.jpeg": "/Ecommerce-Website-using-React/static/media/dress3.5e1855e452b307945634.jpeg",
+    "static/media/dress6.jpeg": "/Ecommerce-Website-using-React/static/media/dress6.00a1415bbda86a09af57.jpeg",
+    "static/media/dress5.webp": "/Ecommerce-Website-using-React/static/media/dress5.afa4a05c9cec24e47a20.webp",
+    "static/media/Grey.jpeg": "/Ecommerce-Website-using-React/static/media/Grey.2bb3ca89ba425aa5d3f4.jpeg",
+    "static/media/Virginia.webp": "/Ecommerce-Website-using-React/static/media/Virginia.eb3a4d385909dfc2f094.webp",
+    "static/media/Shirt.jpeg": "/Ecommerce-Website-using-React/static/media/Shirt.b81b1f15e96ea7129721.jpeg",
+    "static/media/dress4.webp": "/Ecommerce-Website-using-React/static/media/dress4.24e8551453887cdc5859.webp",
+    "static/media/dress1.webp": "/Ecommerce-Website-using-React/static/media/dress1.5e8d5747ef56c9ad17f5.webp",
+    "static/media/Casual Blazer.jpg": "/Ecommerce-Website-using-React/static/media/Casual Blazer.1acc83f50842e66d8199.jpg",
+    "static/media/Sweater.avif": "/Ecommerce-Website-using-React/static/media/Sweater.5a051675aac9371145bf.avif",
+    "static/media/Denim.webp": "/Ecommerce-Website-using-React/static/media/Denim.3ebce3f6e2fd4877654b.webp",
+    "static/media/Jacket.jpg": "/Ecommerce-Website-using-React/static/media/Jacket.bc071e1bf8c452ca0cfa.jpg",
+    "static/media/Blue.webp": "/Ecommerce-Website-using-React/static/media/Blue.08f2c4dd3b5c51f45252.webp",
     "index.html": "/Ecommerce-Website-using-React/index.html",
-    "main.3a126da0.css.map": "/Ecommerce-Website-using-React/static/css/main.3a126da0.css.map",
-    "main.d4594477.js.map": "/Ecommerce-Website-using-React/static/js/main.d4594477.js.map",
+    "main.d02f5600.css.map": "/Ecommerce-Website-using-React/static/css/main.d02f5600.css.map",
+    "main.fb00d0e2.js.map": "/Ecommerce-Website-using-React/static/js/main.fb00d0e2.js.map",
     "787.a91053ce.chunk.js.map": "/Ecommerce-Website-using-React/static/js/787.a91053ce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a126da0.css",
-    "static/js/main.d4594477.js"
+    "static/css/main.d02f5600.css",
+    "static/js/main.fb00d0e2.js"
   ]
 }
