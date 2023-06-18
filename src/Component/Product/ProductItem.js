@@ -10,6 +10,8 @@ import Blue from '../../assets1/Blue.webp'
 import Denim from '../../assets1/Denim.webp'
 import Virginia from '../../assets1/Virginia.webp'
 import {  useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const productsArr = [
   {
@@ -74,18 +76,13 @@ const productsArr = [
 ];
 
 export default function ProductItem() {
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState("");
+  
   const navigate = useNavigate();
 
   const enteredEmail = localStorage.getItem("email");
   const changedemail = enteredEmail.replace("@", "").replace(".", "");
-
   async function btnClickHandler(item) {
-    //  await axios.post(
-    //     `https://crudcrud.com/api/58289aeebc5542b9b67da0ff1ce0ab14/${changedemail}`,
-    //     item
-    //   );
+    toast.dark(`${item.title} added to cart`);
     await fetch(
       `https://e-commerce-2-ad090-default-rtdb.firebaseio.com//user/${changedemail}.json`,
       {
@@ -95,25 +92,14 @@ export default function ProductItem() {
       }
     ); /// complete the code using fire base
     //Custom alert "Item added to cart"
-
-    setAlertMessage(`${item.title} added to cart`);
-    setShowAlert(true);
-
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 2000);
-  }
+}
   const navigateHandler = () => {
     navigate("/womensclothing");
   };
   return (
     <Fragment>
       <Container style={{ marginBottom: "1rem", marginTop: "1rem" }}>
-        {showAlert && (
-          <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
-            {alertMessage}
-          </Alert>
-        )}
+      
         <Row>
           {productsArr.map((item) => (
             <Col key={item.title} xs={12} md={6} lg={3} className={classes.column}>
@@ -151,6 +137,7 @@ export default function ProductItem() {
           </button>
         </div>
       </Container>
+      <ToastContainer theme="colored" />
     </Fragment>
   );
 }

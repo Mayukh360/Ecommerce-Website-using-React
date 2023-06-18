@@ -72,6 +72,7 @@ function App() {
       </Routes>
 
       <Footer />
+     
     </CartProvider>
   );
 }

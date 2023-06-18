@@ -3,6 +3,8 @@ import { Button, Col, Container, Row, Alert } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import classes from "./Product.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const productsArr = [
   {
@@ -65,26 +67,21 @@ const productsArr = [
 ];
 
 export default function ProductItem4() {
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState("");
+ 
   const navigate = useNavigate();
 
   const enteredEmail = localStorage.getItem("email");
   const changedemail = enteredEmail.replace("@", "").replace(".", "");
 
   async function btnClickHandler(item) {
+    toast.dark(`${item.title} added to cart`);
     await axios.post(
       `https://e-commerce-2-ad090-default-rtdb.firebaseio.com//user/${changedemail}.json`,
       item
     );
     //Custom alert "Item added to cart"
 
-    setAlertMessage(`${item.title} added to cart`);
-    setShowAlert(true);
-
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 2000);
+   
   }
   const navigateHandler = () => {
     navigate("/accessories");
@@ -95,11 +92,7 @@ export default function ProductItem4() {
   return (
     <Fragment>
       <Container style={{ marginBottom: "1rem", marginTop: "1rem" }}>
-        {showAlert && (
-          <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
-            {alertMessage}
-          </Alert>
-        )}
+      
         <Row>
           {productsArr.map((item) => (
             <Col
@@ -150,6 +143,7 @@ export default function ProductItem4() {
           </button>
         </div>
       </Container>
+      <ToastContainer />
     </Fragment>
   );
 }
